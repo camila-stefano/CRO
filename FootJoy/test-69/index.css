@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+  .fixed {
+    box-sizing: border-box !important;
+    transition: smooth !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    margin: 40px !important;
+    z-index: 1000 !important;
+    width: calc(100% - 80px);
+    border: 1px solid #d3d3d3 !important;
+  }
+
+  #secondary.refinements {
+    top: 43px !important;
+    height: -webkit-fill-available !important;
+  }
+}
