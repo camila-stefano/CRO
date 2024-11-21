@@ -19,16 +19,28 @@ function waitForElm(selector) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  waitForElm(".corinne-campaign.Campaign").then((popup) => {
+function addClassNameListener(selector, callback) {
+  var elem = document.querySelector(selector);
+  var lastClassName = elem.className;
+  window.setInterval(function () {
+    var className = elem.className;
+    if (className !== lastClassName) {
+      callback();
+      lastClassName = className;
+    }
+  }, 10);
+}
+
+window.onload = function () {
+  waitForElm(".Campaign.CampaignType--popup").then((popup) => {
     // Remove the popup from the DOM
-    console.log("🚀 ~ waitForElm ~ popup:", popup);
 
     popup.remove();
 
-    // Remove the popup class from the html element
-    timeout = setTimeout(() => {
-      document.querySelector("html").classList.remove("om-position-popup");
-    }, 500);
+    addClassNameListener("html", () => {
+      if (document.querySelector(".om-position-popup")) {
+        document.querySelector("html").classList.remove("om-position-popup");
+      }
+    });
   });
-});
+};
