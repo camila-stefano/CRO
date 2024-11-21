@@ -10,8 +10,9 @@ const reviews = document.querySelector(
 
 function handleSmallDevices() {
   const isMobile = window.innerWidth < 544;
-  const isTablet = window.innerWidth < 768;
-  const isDesktop = window.innerWidth >= 768;
+  const isTabletMobile = window.innerWidth < 768;
+  const isTablet = window.innerWidth < 1279;
+  const isDesktop = window.innerWidth >= 1279;
 
   const heartBtn = document.querySelector(
     ".c-product-details__wishlist-btn__heart"
@@ -31,6 +32,11 @@ function handleSmallDevices() {
     addToCartBtn.classList.add("col-10");
     addToCartBtn.classList.remove("col-md");
     wishlistSeparator.style.display = "none";
+    wishlistBtn.style.justifyContent = "center";
+  }
+
+  if (isTabletMobile) {
+    wishlistBtn.style.justifyContent = "left";
   }
 
   if (isMobile) {
