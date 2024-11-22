@@ -1,17 +1,18 @@
+console.log("🚀 SCRIPT LOADED");
+
 function waitForElm(selector) {
   return new Promise((resolve) => {
     if (document.querySelector(selector)) {
       return resolve(document.querySelector(selector));
     }
 
-    const observer = new MutationObserver((mutations) => {
+    const observer = new MutationObserver(() => {
       if (document.querySelector(selector)) {
         observer.disconnect();
         resolve(document.querySelector(selector));
       }
     });
 
-    // If you get "parameter 1 is not of type 'Node'" error, see https://stackoverflow.com/a/77855838/492336
     observer.observe(document.body, {
       childList: true,
       subtree: true,
@@ -19,28 +20,40 @@ function waitForElm(selector) {
   });
 }
 
-function addClassNameListener(selector, callback) {
-  var elem = document.querySelector(selector);
-  var lastClassName = elem.className;
-  window.setInterval(function () {
-    var className = elem.className;
-    if (className !== lastClassName) {
-      callback();
-      lastClassName = className;
-    }
-  }, 10);
-}
+function observeHtmlClass() {
+  const htmlElement = document.querySelector("html");
 
-window.onload = function () {
-  waitForElm(".Campaign.CampaignType--popup").then((popup) => {
-    // Remove the popup from the DOM
+  if (!htmlElement) {
+    console.error("The <html> element was not found.");
+    return;
+  }
 
-    popup.remove();
+  const htmlObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.attributeName === "class") {
+        console.log("🚀 ~ Updated Class in <html>: ", htmlElement.className);
 
-    addClassNameListener("html", () => {
-      if (document.querySelector(".om-position-popup")) {
-        document.querySelector("html").classList.remove("om-position-popup");
+        // Si la clase "om-position-popup" está presente, se elimina antes de que afecte el diseño
+        if (htmlElement.classList.contains("om-position-popup")) {
+          console.log("🚀 ~ Deleting class 'om-position-popup'...");
+          htmlElement.classList.remove("om-position-popup");
+        }
       }
     });
   });
-};
+
+  // Observe changes in attributes of the <html> element
+  htmlObserver.observe(htmlElement, { attributes: true });
+}
+
+// Start the observer immediately
+observeHtmlClass();
+
+// Wait for the popup to appear and remove it
+waitForElm(".Campaign.CampaignType--popup").then((popup) => {
+  console.log("🚀 ~ Popup found:", popup);
+
+  // Remove the popup from the DOM
+  popup.remove();
+  console.log("🚀 ~ Popup deleted");
+});
