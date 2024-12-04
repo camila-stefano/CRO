@@ -1,0 +1,10 @@
+span.c-product-details__wishlist-btn__heart.c-product-details__wishlist-btn__text::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(25, 115, 193);
+  mix-blend-mode: color;
+}

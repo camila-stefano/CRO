@@ -13,6 +13,7 @@ function handleSmallDevices() {
   const isTabletMobile = window.innerWidth < 768;
   const isTablet = window.innerWidth < 1279;
   const isDesktop = window.innerWidth >= 1279;
+  const isTabletOnly = window.innerWidth >= 544 && window.innerWidth < 1279;
 
   const heartBtn = document.querySelector(
     ".c-product-details__wishlist-btn__heart"
@@ -24,6 +25,10 @@ function handleSmallDevices() {
   if (isDesktop) {
     reviews.insertAdjacentElement("beforeend", wishlistBtn);
     wishlistSeparator.style.display = "block";
+
+    // Remove pseudo-element if it exists
+    const existingPseudo = wishlistBtn.querySelector(".pseudo-element");
+    if (existingPseudo) existingPseudo.remove();
   }
 
   if (isTablet) {
@@ -37,6 +42,33 @@ function handleSmallDevices() {
 
   if (isTabletMobile) {
     wishlistBtn.style.justifyContent = "left";
+
+    // Remove pseudo-element if it exists
+    const existingPseudo = wishlistBtn.querySelector(".pseudo-element");
+    if (existingPseudo) existingPseudo.remove();
+  }
+
+  if (isTabletOnly) {
+    wishlistBtn.style.marginTop = "16px";
+    // Add the equivalent of `::after` styling dynamically
+    const pseudoElement = document.createElement("span");
+    pseudoElement.style.content = "''";
+    pseudoElement.style.position = "absolute";
+    pseudoElement.style.top = "0";
+    pseudoElement.style.left = "0";
+    pseudoElement.style.width = "100%";
+    pseudoElement.style.height = "100%";
+    pseudoElement.style.background = "rgb(25, 115, 193)";
+    pseudoElement.style.mixBlendMode = "color";
+
+    // Ensure the parent element has relative positioning
+    wishlistBtn.style.position = "relative";
+
+    // Check if the pseudo-element is already added to avoid duplicates
+    if (!wishlistBtn.querySelector(".pseudo-element")) {
+      pseudoElement.classList.add("pseudo-element");
+      wishlistBtn.appendChild(pseudoElement);
+    }
   }
 
   if (isMobile) {
@@ -47,6 +79,10 @@ function handleSmallDevices() {
     heartBtn.classList.add("m-0");
 
     element.style.display = "none";
+
+    // Remove pseudo-element if it exists
+    const existingPseudo = wishlistBtn.querySelector(".pseudo-element");
+    if (existingPseudo) existingPseudo.remove();
   } else {
     cartContainer.className = "row cart-and-ipay";
 
