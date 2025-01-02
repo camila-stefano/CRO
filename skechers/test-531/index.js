@@ -70,3 +70,23 @@ waitForElement(".color-attribute", function (colorAttributes) {
   (() => handleSmallDevices())();
   window.addEventListener("resize", () => handleSmallDevices());
 });
+
+waitForElement(".filter-value", function (filterValues) {
+  filterValues.forEach((filterValue) => {
+    const button = filterValue.querySelector("button");
+    if (button && !filterValue.querySelector("p")) {
+      // Obtén el valor del color
+      const dataValue = button.getAttribute("data-value");
+
+      // Crea y configura el nuevo párrafo
+      const colorName = document.createElement("p");
+      colorName.textContent = dataValue;
+      colorName.style.fontSize = "12px";
+      colorName.style.margin = "0";
+      colorName.style.textAlign = "center";
+
+      // Inserta el párrafo en el elemento `li`
+      filterValue.insertAdjacentElement("afterend", colorName);
+    }
+  });
+});
