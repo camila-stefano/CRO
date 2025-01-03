@@ -71,22 +71,20 @@ waitForElement(".color-attribute", function (colorAttributes) {
   window.addEventListener("resize", () => handleSmallDevices());
 });
 
-waitForElement(".filter-value", function (filterValues) {
-  filterValues.forEach((filterValue) => {
-    const button = filterValue.querySelector("button");
-    if (button && !filterValue.querySelector("p")) {
-      // Obtén el valor del color
-      const dataValue = button.getAttribute("data-value");
+waitForElement(".filter-value", () => {
+  const filterValue = document.querySelector(".filter-value");
 
-      // Crea y configura el nuevo párrafo
-      const colorName = document.createElement("p");
-      colorName.textContent = dataValue;
-      colorName.style.fontSize = "12px";
-      colorName.style.margin = "0";
-      colorName.style.textAlign = "center";
+  if (filterValue) {
+    const dataValue = filterValue
+      .querySelector("button")
+      .getAttribute("data-value");
 
-      // Inserta el párrafo en el elemento `li`
-      filterValue.insertAdjacentElement("afterend", colorName);
-    }
-  });
+    const span = document.createElement("span");
+
+    span.textContent = dataValue;
+
+    filterValue.appendChild(span);
+
+    span.style.fontSize = "15px";
+  }
 });
