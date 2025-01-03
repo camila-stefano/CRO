@@ -9,6 +9,20 @@ function waitForElement(selector, callback) {
   observer.observe(document.body, { childList: true, subtree: true });
 }
 
+function waitForSpecificElement(selector, parentSelector, callback) {
+  const observer = new MutationObserver(() => {
+    const elements = document.querySelectorAll(selector);
+    if (elements.length > 0) {
+      callback(elements);
+    }
+  });
+
+  observer.observe(document.querySelector(parentSelector), {
+    childList: true,
+    subtree: false,
+  });
+}
+
 waitForElement(".color-attribute", function (colorAttributes) {
   const containerElement = document.querySelector(
     ".c-search-refinements__refinement__values--swatches"
@@ -71,20 +85,39 @@ waitForElement(".color-attribute", function (colorAttributes) {
   window.addEventListener("resize", () => handleSmallDevices());
 });
 
-waitForElement(".filter-value", () => {
-  const filterValue = document.querySelector(".filter-value");
+waitForSpecificElement(".filter-value", ".filter-bar", function (pill) {
+  pill.forEach((filterValue) => {
+    if (filterValue.querySelector(".filter-value__pill")) return;
 
-  if (filterValue) {
-    const dataValue = filterValue
-      .querySelector("button")
-      .getAttribute("data-value");
+    const button = filterValue.querySelector("button");
+    const circle = filterValue.querySelector(".swatch-filter");
 
-    const span = document.createElement("span");
+    if (button) {
+      const colorValue = button.getAttribute("data-value");
 
-    span.textContent = dataValue;
+      const nameSpan = document.createElement("span");
+      nameSpan.classList.add("filter-value__pill");
 
-    filterValue.appendChild(span);
+      nameSpan.textContent = colorValue;
 
-    span.style.fontSize = "15px";
-  }
+      filterValue.insertBefore(nameSpan, button);
+
+      filterValue.style.display = "flex";
+      filterValue.style.alignItems = "center";
+      filterValue.style.gap = "5px";
+      filterValue.style.paddingLeft = "10px";
+      filterValue.style.paddingRight = "16px";
+
+      circle.style.position = "static";
+      circle.style.margin = "0px";
+      circle.style.padding = "0px";
+
+      button.style.padding = "0px";
+      button.style.position = "relative";
+      button.style.right = "-2rem";
+      button.style.top = "-1px";
+
+      nameSpan.style.fontSize = "15px";
+    }
+  });
 });
