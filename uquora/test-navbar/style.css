@@ -1,0 +1,101 @@
+.nav-link {
+  text-transform: capitalize !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 20.16px !important;
+}
+.arrow {
+  padding-left: 7px;
+  width: 13x;
+  height: 13px;
+}
+.arrow-close i {
+  transform: rotate(-90deg);
+}
+.arrow-open i {
+  transform: rotate(0deg);
+}
+.floating-menu {
+  display: flex;
+  flex-direction: row;
+}
+.floating-menu .list {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+}
+.floating-menu .list div {
+  height: 42px;
+}
+.floating-menu .list div a {
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.16px;
+}
+.floating-menu .list div a:first-child {
+  color: #fe633c;
+}
+.floating-menu .list div a {
+  color: #4c4d4f;
+}
+
+.product-title {
+  font-family: Outfit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.16px;
+  color: #4c4d4f;
+}
+
+.product-subtitle {
+  color: #fe633c;
+  font-family: Outfit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 14.87px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+/* Navbar icons */
+.navbar-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-link {
+  color: #333;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.icon-link:hover {
+  color: #fe633c;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-item:hover .dropdown-products {
+    position: static;
+    box-shadow: none;
+    border: none;
+  }
+
+  .navbar-icons {
+    margin-left: auto;
+  }
+}
