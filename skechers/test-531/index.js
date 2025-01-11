@@ -43,8 +43,10 @@ waitForElement(".color-attribute", function (colorAttributes) {
       colorName.style.fontSize = "15px";
       colorName.style.display = "flex";
       colorName.style.justifyContent = "center";
-      colorName.style.maxWidth = "4rem";
+      colorName.style.maxWidth = "3rem";
       colorName.style.textAlign = "center";
+      colorName.style.margin = "0";
+      colorName.style.paddingTop = "3px";
     }
   });
 
@@ -61,12 +63,14 @@ waitForElement(".color-attribute", function (colorAttributes) {
     } else if (isTablet) {
       containerElement.style.display = "flex";
       containerElement.style.gap = "8px 12px";
-      containerElement.style.flexWrap = "wrap"; // Corregido: "flexWrap"
+      containerElement.style.flexWrap = "wrap";
     } else if (isDesktop) {
       containerElement.style.display = "grid";
       containerElement.style.gridTemplateColumns = "repeat(4, 1fr)";
-      containerElement.style.gap = "8px 20px";
+      containerElement.style.gap = "8px 18px";
       containerElement.style.justifyItems = "center";
+      containerElement.style.marginLeft = "0px";
+      containerElement.style.marginRight = "0px";
 
       if (containerElement.firstElementChild) {
         containerElement.firstElementChild.style.display = "flex";
@@ -77,6 +81,7 @@ waitForElement(".color-attribute", function (colorAttributes) {
         liElement.style.display = "flex";
         liElement.style.flexDirection = "column";
         liElement.style.alignItems = "center";
+        liElement.style.minHeight = "88px";
       });
     }
   }
