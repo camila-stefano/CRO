@@ -3,7 +3,7 @@ function waitForElement(selector, callback) {
     const elements = document.querySelectorAll(selector);
     if (elements.length > 0) {
       callback(elements);
-      observer.disconnect(); // Detener el observador una vez encontrado
+      observer.disconnect();
     }
   });
   observer.observe(document.body, { childList: true, subtree: true });
@@ -37,7 +37,6 @@ function handleSmallDevices() {
   if (sizesClone) {
     sizesClone.style.display = isMobile ? "flex" : "none";
 
-    // Agregar estilos adicionales si es necesario
     if (isMobile) {
       sizesClone.style.overflowX = "scroll";
       sizesClone.style.flexWrap = "nowrap";
