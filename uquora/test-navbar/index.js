@@ -1,28 +1,34 @@
-// Create <link> element to add Font Awesome CDN
-const fontAwesomeCDN = document.createElement("link");
-fontAwesomeCDN.rel = "stylesheet";
-fontAwesomeCDN.href =
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";
-document.head.appendChild(fontAwesomeCDN);
+function handleDropdownHover(triggerSelector, menuSelector) {
+  const triggerElement = document.querySelector(triggerSelector);
+  const menuElement = document.querySelector(menuSelector);
 
-const productsDropdown = document.querySelector(".products-dropdown");
+  if (triggerElement && menuElement) {
+    menuElement.classList.add("display-none");
 
-const floatingMenuContainer = document.querySelector(
-  ".floating-menu-container"
+    triggerElement.addEventListener("mouseover", () => {
+      menuElement.classList.remove("display-none");
+      menuElement.classList.add("display-flex");
+    });
+
+    triggerElement.addEventListener("mouseout", () => {
+      menuElement.classList.remove("display-flex");
+      menuElement.classList.add("display-none");
+    });
+
+    menuElement.addEventListener("mouseover", () => {
+      menuElement.classList.remove("display-none");
+      menuElement.classList.add("display-flex");
+    });
+
+    menuElement.addEventListener("mouseout", () => {
+      menuElement.classList.remove("display-flex");
+      menuElement.classList.add("display-none");
+    });
+  }
+}
+
+handleDropdownHover(".products-dropdown", ".floating-menu-container");
+handleDropdownHover(
+  ".learning-dropdown",
+  ".floating-learning-center-container"
 );
-
-productsDropdown.addEventListener("mouseover", () => {
-  floatingMenuContainer.classList.add("display-block");
-});
-
-productsDropdown.addEventListener("mouseout", () => {
-  floatingMenuContainer.classList.remove("display-block");
-});
-
-floatingMenuContainer.addEventListener("mouseover", () => {
-  floatingMenuContainer.classList.add("display-block");
-});
-
-floatingMenuContainer.addEventListener("mouseout", () => {
-  floatingMenuContainer.classList.remove("display-block");
-});
