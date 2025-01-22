@@ -1,3 +1,12 @@
+.display-none {
+  display: none !important;
+}
+.display-block {
+  display: block !important;
+}
+.mobile {
+  display: none !important;
+}
 .dropdown {
   position: relative;
   display: inline-block;
@@ -20,21 +29,21 @@
 .arrow-open {
   padding-top: 0.2rem;
 }
-
 .arrow i {
   padding: 0.5rem;
-  transform: rotate(90deg);
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
 }
 .dropdown:hover .arrow i {
-  transform: rotate(-90deg);
+  transform: rotate(180deg);
 }
 .big-arrow i {
   width: 13px;
   height: 26px;
   color: #959595 !important;
 }
-.big-arrow {
-  margin-bottom: 2rem;
+.big-arrow-container {
+  margin-bottom: 4rem;
 }
 .border {
   border: 1px solid rgb(232, 233, 235);
@@ -95,6 +104,9 @@
   max-width: 144px;
   width: 100%;
 }
+.product-card a {
+  text-decoration: none;
+}
 .product-title {
   text-align: center;
   color: #4c4d4f;
@@ -134,4 +146,69 @@
 }
 .font-color-orange {
   color: #fe633c !important;
+}
+
+@media screen and (max-width: 969px) {
+  .mobileOff {
+    display: none !important;
+  }
+  #mainNavbar .navbar-nav > .nav-item {
+    border: none !important;
+  }
+  .nav-link {
+    color: rgba(2, 59, 101, 0.87) !important;
+  }
+  .dropdown:hover .dropdown-content {
+    display: none !important;
+  }
+  .mobile {
+    display: block !important;
+  }
+  .border-t-b {
+    border-top: 1px solid rgb(232, 233, 235);
+    border-bottom: 1px solid rgb(232, 233, 235);
+  }
+  .border-b {
+    border-bottom: 1px solid rgb(232, 233, 235);
+  }
+  div .box-menu-link-mobile {
+    display: flex;
+    align-items: center;
+    height: 60px;
+  }
+
+  div .products-content-mobile {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    background-color: rgba(245, 245, 245, 1);
+  }
+  .products-content-mobile a,
+  .box-menu-link-mobile a {
+    padding: 1rem !important;
+  }
+  .ul-products-mobile {
+    padding: 0.5rem;
+  }
+  .ul-products-mobile li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style-type: none;
+    padding: 0.5rem 1.5rem;
+  }
+  .ul-products-mobile li a {
+    text-decoration: none;
+  }
+  .ul-products-mobile li a p {
+    color: rgba(2, 59, 101, 0.87);
+    line-height: 24px;
+  }
+  .ul-products-mobile li a p span {
+    color: rgba(2, 59, 101, 0.87);
+    font-weight: 400 !important;
+  }
+  .weight-400 {
+    font-weight: 400 !important;
+  }
 }
