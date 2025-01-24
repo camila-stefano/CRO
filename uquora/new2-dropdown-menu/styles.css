@@ -16,6 +16,10 @@
   position: absolute;
   z-index: 1;
 }
+ul#navbar-tier-1 {
+  width: 100% !important;
+  justify-content: space-between;
+}
 @media (min-width: 801px) {
   .dropdown:hover .dropdown-content {
     display: block !important;
@@ -39,15 +43,16 @@
 .dropdown-text .nav-link:hover {
   border-bottom: none !important;
 }
-.arrow-open {
+.arrow-open i {
   padding-top: 0.2rem;
+  transform: rotate(0deg);
 }
 .arrow i {
   padding-left: 0.5rem;
   transform: rotate(0deg);
   transition: 0.25s ease-in-out;
 }
-.arrow i.rotated {
+.arrow i .rotated {
   transform: rotate(180deg);
 }
 .big-arrow i {
@@ -110,7 +115,7 @@
 .product-card {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.2rem;
   justify-content: center;
 }
 .product-card img {
@@ -129,14 +134,14 @@
   font-weight: 500 !important;
   line-height: 15px;
   margin: 0;
-  padding: 0;
+  padding-top: 0.4rem;
 }
 .product-subtitle {
   text-align: center;
   color: #4c4d4f;
   font-family: inherit;
   font-size: 13px;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
   line-height: 15px;
   margin: 0;
   padding: 0;
@@ -201,7 +206,7 @@
     padding: 0;
     height: 60px;
   }
-  div .border-t-b .box-menu-link-mobile {
+  .border-t-b .box-menu-link-mobile {
     height: 60px;
   }
   span.nav-link {
@@ -209,7 +214,10 @@
     justify-content: space-between;
     align-items: center;
   }
-
+  ul#navbar-tier-1 {
+    width: 100% !important;
+    justify-content: flex-start;
+  }
   li.nav-item.dropdown.mobile div a {
     text-decoration: none !important;
     color: rgba(2, 59, 101, 0.87) !important;
@@ -288,5 +296,18 @@
   }
   .weight-400 {
     font-weight: 400 !important;
+  }
+  .login-icon {
+    color: #fe633c !important;
+    width: 22px;
+  }
+  .contact-us-icon {
+    width: 22px;
+  }
+  hr .hr {
+    border: none;
+    height: 1.2px;
+    color: #34769c;
+    background-color: #34769c;
   }
 }

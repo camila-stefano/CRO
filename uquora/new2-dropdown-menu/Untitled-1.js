@@ -1,3 +1,9 @@
+console.log("🚀 ~ SCRIPT LOADED");
+console.log(
+  "🚀 ~ ELEMENT EXIST BEFORE DOM? ",
+  document.querySelector(".dropdown-btn")
+);
+
 function waitForElement(selector, callback) {
   const observer = new MutationObserver((mutations) => {
     if (document.querySelector(selector)) {
@@ -11,6 +17,8 @@ function waitForElement(selector, callback) {
 
 waitForElement(".dropdown-btn", function () {
   document.querySelector(".dropdown-btn").addEventListener("click", () => {
+    console.log("🚀 ~ ONCLICK");
+
     const dropdownMenu = document.querySelector(".products-mobile-container");
     const toggleArrow = document.querySelector(".dropdown-btn .arrow i");
 
