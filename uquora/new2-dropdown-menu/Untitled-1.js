@@ -12,9 +12,7 @@ function waitForElement(selector, callback) {
 waitForElement(".dropdown-btn", function () {
   document.querySelector(".dropdown-btn").addEventListener("click", () => {
     const dropdownMenu = document.querySelector(".products-mobile-container");
-    const toggleArrow = document.querySelector(
-      ".dropdown-btn .nav-link .arrow i"
-    );
+    const toggleArrow = document.querySelector(".dropdown-btn .arrow i");
 
     const isCollapsed = dropdownMenu.classList.contains("display-none");
 

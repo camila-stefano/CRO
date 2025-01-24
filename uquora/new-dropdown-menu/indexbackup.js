@@ -2,16 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
   /*  Navbar mobile functionality */
   const navbarToggler = document.querySelector(".navbar-toggler");
   const navbarCollapse = document.querySelector("#mainNavbarCollapse");
-
   navbarToggler.addEventListener("click", () => {
-    navbarCollapse.classList.toggle("show");
-    navbarToggler.classList.toggle("collapsed"); // Alterna la clase 'collapsed'
+    navbarCollapse.classList.toggle("collapse");
+    navbarToggler.classList.toggle("collapsed");
     const isExpanded = navbarToggler.getAttribute("aria-expanded") === "true";
-    navbarToggler.setAttribute("aria-expanded", !isExpanded);
+    navbarToggler.setAttribute("aria-expanded", isExpanded ? "true" : "false");
   });
-
   /* Mobile products  */
-
   const productsLink = document.querySelector(".products-content-mobile");
   const productsContainer = document.querySelector(
     ".products-mobile-container"
