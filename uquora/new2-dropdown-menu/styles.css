@@ -343,6 +343,15 @@ p.weight-500.product-subtitle.font-color-orange {
     padding: 0.5rem 0rem 1rem 0rem;
     border-top: 1px solid rgb(232, 233, 235);
   }
+  p.product-subtitle.font-color-orange.font-nunito.weight-400 {
+    font-size: 14px;
+  }
+  p.product-title.font-nunito.weight-700 {
+    font-size: 16px;
+  }
+  span.product-subtitle.font-nunito.weight-400 {
+    font-size: 16px;
+  }
 }
 @media only screen and (max-width: 1208px) and (min-width: 991px) {
   ul#navbar-tier-1 {
