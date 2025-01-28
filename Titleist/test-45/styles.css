@@ -1,6 +1,6 @@
 .container-pay-in-4 {
   width: 100%;
-  background-color: #e8e8e8;
+  background-color: #f2f2f2;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -9,17 +9,23 @@
   padding: 1rem 2.5rem;
 }
 .span-pay-in-4 {
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 20px;
   color: #4c4c4c;
   text-align: center;
+}
+.span-paypal-img {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
 }
 .img-paypal {
   width: 79px;
   height: 30px;
 }
 .img-exclamation {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }
 #wrapper.pt_cart
   #main
@@ -43,4 +49,9 @@
   .cart-actions
   > .cart-action-paypal {
   width: 100%;
+}
+@media screen and (max-width: 394px) {
+  .container-pay-in-4 {
+    padding: 1rem 1.5rem;
+  }
 }
