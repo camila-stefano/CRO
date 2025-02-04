@@ -146,6 +146,5 @@ function processFilters(pill) {
   });
 }
 
-// Ejecutar la función en la carga inicial y observar cambios
 waitForSpecificElement(".filter-value", ".filter-bar", processFilters);
 observeFilterChanges();
