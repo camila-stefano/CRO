@@ -58,7 +58,7 @@ waitForElement(".color-attribute", function (colorAttributes) {
     if (isMobile) {
       containerElement.style.display = "grid";
       containerElement.style.gridTemplateColumns = "repeat(5, 1fr)";
-      containerElement.style.gap = "0px 0px";
+      containerElement.style.gap = "8px 20px";
       containerElement.style.justifyItems = "center";
     } else if (isTablet) {
       containerElement.style.display = "flex";
@@ -67,7 +67,7 @@ waitForElement(".color-attribute", function (colorAttributes) {
     } else if (isDesktop) {
       containerElement.style.display = "grid";
       containerElement.style.gridTemplateColumns = "repeat(4, 1fr)";
-      containerElement.style.gap = "8px 18px";
+      containerElement.style.gap = "8px 20px";
       containerElement.style.justifyItems = "center";
       containerElement.style.marginLeft = "0px";
       containerElement.style.marginRight = "0px";
@@ -146,6 +146,5 @@ function processFilters(pill) {
   });
 }
 
-// Ejecutar la función en la carga inicial y observar cambios
 waitForSpecificElement(".filter-value", ".filter-bar", processFilters);
 observeFilterChanges();
