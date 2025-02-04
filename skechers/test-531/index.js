@@ -90,19 +90,38 @@ waitForElement(".color-attribute", function (colorAttributes) {
   window.addEventListener("resize", () => handleSmallDevices());
 });
 
-waitForSpecificElement(".filter-value", ".filter-bar", function (pill) {
+function observeFilterChanges() {
+  const filterBar = document.querySelector(".filter-bar");
+
+  if (!filterBar) return;
+
+  const observer = new MutationObserver(() => {
+    console.log("Detectado cambio en la página, ejecutando función...");
+    waitForSpecificElement(".filter-value", ".filter-bar", processFilters);
+  });
+
+  observer.observe(filterBar, { childList: true, subtree: true });
+}
+
+function processFilters(pill) {
   pill.forEach((filterValue) => {
-    if (filterValue.querySelector(".filter-value__pill")) return;
+    const swatchFilter = filterValue.querySelector(".swatch-filter");
+
+    if (!swatchFilter) return;
 
     const button = filterValue.querySelector("button");
     const circle = filterValue.querySelector(".swatch-filter");
 
     if (button) {
       const colorValue = button.getAttribute("data-value");
+      console.log(filterValue, "colorValue", colorValue);
+
+      if (filterValue.children[1].classList.contains("filter-value__pill")) {
+        return;
+      }
 
       const nameSpan = document.createElement("span");
       nameSpan.classList.add("filter-value__pill");
-
       nameSpan.textContent = colorValue;
 
       filterValue.insertBefore(nameSpan, button);
@@ -125,4 +144,8 @@ waitForSpecificElement(".filter-value", ".filter-bar", function (pill) {
       nameSpan.style.fontSize = "15px";
     }
   });
-});
+}
+
+// Ejecutar la función en la carga inicial y observar cambios
+waitForSpecificElement(".filter-value", ".filter-bar", processFilters);
+observeFilterChanges();
