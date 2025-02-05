@@ -9,6 +9,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
+    <!-- Font Nunito & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <ul class="navbar-nav tier-1 align-items-lg-center" id="navbar-tier-1">
@@ -166,15 +174,13 @@
           </ul>
         </div>
       </li>
-      <li class="nav-item dropdown mobile">
+      <li class="nav-item mobile">
         <div class="border-t-b box-menu-link-mobile">
-          <a href="/collections/products"
+          <a href="https://uqora.com/collections/products"
             ><span class="nav-link font-nunito weight-700"
               >View All Products</span
-            >
-            <span class="arrow-open"
-              ><i class="fa-solid fa-chevron-down"></i></span
-          ></a>
+            ></a
+          >
         </div>
       </li>
       <li class="nav-item">
@@ -196,89 +202,155 @@
           >Reviews ⭐</a
         >
       </li>
+      <!-- Learning Center -->
       <li class="nav-item dropdown">
-        <div class="border-t-b box-menu-link-mobile mobileOff">
+        <div class="mobileOff">
           <a
-            href="https://uqora.info/?_gl=1*nsvi4l*_gcl_au*NzQ3MTQ1NTUyLjE3MzgwNzQ1MTY.*_ga*NTcxMTI2MzU3LjE3MzQ1NTIzMzI.*_ga_RK2H883XGR*MTczODA3Njc3NC42MC4xLjE3MzgwNzY4NDEuNTMuMC4w"
-            class="nav-link"
+            rel="noopener noreferrer"
+            target="_self"
+            href="https://uqora.info/"
+            class="dropdown-text nav-link"
             style="padding: 1.5rem 1rem"
             >Learning Center
             <span class="arrow"><i class="fa-solid fa-chevron-down"></i></span
           ></a>
         </div>
-        <div class="dropdown-content floating-learning-center-container border">
-          <ul>
-            <li class="learning-center-li">
+
+        <div class="dropdown-content floating-menu-container border mobileOff">
+          <div class="floating-menu">
+            <div class="list">
+              <a
+                rel=" noopener noreferrer"
+                target="_self"
+                href="https://uqora.info/"
+                class="nav-link font-color-orange"
+                >Learning Center
+                <span class="arrow-open"
+                  ><i class="fa-solid fa-chevron-down"></i></span
+              ></a>
+              <a href="https://uqora.com/pages/meet-our-docs" class="nav-link"
+                >Uquora Experts
+                <span class="arrow-open"
+                  ><i class="fa-solid fa-chevron-down"></i></span
+              ></a>
+              <a href="https://uqora.com/pages/good-doc-club" class="nav-link"
+                >Good Doc Club</a
+              >
+            </div>
+            <div class="product-container">
+              <div class="card-container">
+                <div class="product-card">
+                  <a
+                    href="https://uqora.info/search?q=Urinary+Tract+Infections&amp;type=article&amp;view=blog"
+                    ><div class="learning-center-box bg-light-orange">
+                      <p class="learning-center-box-content">
+                        Urinary Tract Infections
+                      </p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-card">
+                  <a
+                    href="https://uqora.info/search?q=Vaginal+Health&amp;type=article&amp;view=blog"
+                    ><div class="learning-center-box bg-light-blue">
+                      <p class="learning-center-box-content">Vaginal Healths</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-card">
+                  <a
+                    href="https://uqora.info/search?q=Bladder+Health&amp;type=article&amp;view=blog"
+                    ><div class="learning-center-box bg-light-green">
+                      <p class="learning-center-box-content">Bladder Healths</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-card">
+                  <a
+                    href="https://uqora.info/search?q=Sexual+Wellness&amp;type=article&amp;view=blog"
+                    ><div class="learning-center-box bg-light-pink">
+                      <p class="learning-center-box-content">Sexual Wellness</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="product-card" style="visibility: hidden">
+                  <a
+                    href="https://uqora.info/search?q=Sexual+Wellness&amp;type=article&amp;view=blog"
+                    ><div class="learning-center-box bg-light-pink">
+                      <p class="learning-center-box-content">Sexual Wellness</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="big-arrow" style="visibility: hidden">
+                  <a href="/collections/products/in-control-bladder-support"
+                    ><span class="arrow-open"
+                      ><i class="fa-solid fa-chevron-down"></i
+                    ></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="mobile dropdown-btn products-content-mobile border-t-b learning-center-mobile-btn"
+        >
+          <span class="nav-link font-nunito weight-700"
+            >Learning Center
+            <span class="arrow"><i class="fa-solid fa-chevron-down"></i></span
+          ></span>
+        </button>
+
+        <div class="products-mobile-container display-none">
+          <ul class="ul-products-mobile">
+            <li>
               <a
                 href="https://uqora.info/search?q=Urinary+Tract+Infections&amp;type=article&amp;view=blog"
-                class="nav-link"
-                style="font-family: 'Nunito', sans-serif"
-                >Urinary Tract Infections</a
               >
+                <p class="product-title font-nunito weight-400">
+                  Urinary Tract Infections
+                </p>
+              </a>
             </li>
             <li>
               <a
                 href="https://uqora.info/search?q=Vaginal+Health&amp;type=article&amp;view=blog"
-                class="nav-link"
-                style="font-family: 'Nunito', sans-serif"
-                >Vaginal Health</a
               >
+                <p class="product-title font-nunito weight-400">
+                  Vaginal Healths
+                </p>
+              </a>
             </li>
             <li>
               <a
                 href="https://uqora.info/search?q=Bladder+Health&amp;type=article&amp;view=blog"
-                class="nav-link"
-                style="font-family: 'Nunito', sans-serif"
-                >Bladder Health</a
               >
+                <p class="product-title font-nunito weight-400">
+                  Bladder Healths
+                </p>
+              </a>
             </li>
             <li>
               <a
                 href="https://uqora.info/search?q=Sexual+Wellness&amp;type=article&amp;view=blog"
-                class="nav-link"
-                style="font-family: 'Nunito', sans-serif"
-                >Sexual Wellness</a
               >
-            </li>
-            <li>
-              <a
-                href="https://uqora.info/search?q=Nutrition&amp;type=article&amp;view=blog"
-                class="nav-link"
-                style="font-family: 'Nunito', sans-serif"
-                >Nutrition</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://uqora.info/search?q=Uqora+Experts&amp;type=article&amp;view=blog"
-                class="nav-link"
-                style="font-family: 'Nunito', sans-serif"
-                >Uqora Experts</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://uqora.info/search?q=Good+Doc+Club&amp;type=article&amp;view=blog"
-                class="nav-link"
-                style="font-family: 'Nunito', sans-serif"
-                >Good Doc Club</a
-              >
+                <p class="product-title font-nunito weight-400">
+                  Sexual Wellnesss
+                </p>
+              </a>
             </li>
           </ul>
         </div>
       </li>
-      <li class="nav-item mobile">
-        <div class="border-t-b box-menu-link-mobile">
-          <a
-            href="https://uqora.info/?_gl=1*nsvi4l*_gcl_au*NzQ3MTQ1NTUyLjE3MzgwNzQ1MTY.*_ga*NTcxMTI2MzU3LjE3MzQ1NTIzMzI.*_ga_RK2H883XGR*MTczODA3Njc3NC42MC4xLjE3MzgwNzY4NDEuNTMuMC4w"
-            class="nav-link font-nunito weight-700"
-            ><span>Learning Center</span>
-            <span class="arrow-open"
-              ><i class="fa-solid fa-chevron-down"></i></span
-          ></a>
-        </div>
-      </li>
-      <li class="nav-item">
+      <!-- Learning Center -->
+
+      <li class="nav-item mobile-border-top">
         <a href="/pages/meet-the-team" class="nav-link font-nunito weight-400"
           >Our Story</a
         >
