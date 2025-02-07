@@ -1,13 +1,38 @@
 function waitForElement(selector, callback) {
   const observer = new MutationObserver((mutations) => {
-    if (document.querySelector(selector)) {
+    const element = document.querySelector(selector);
+
+    if (element) {
+      callback(element);
       observer.disconnect();
-      callback();
     }
   });
 
   observer.observe(document.body, { childList: true, subtree: true });
 }
+
+const handleArrowOnHover = (id) => {
+  waitForElement(`.dropdown-content.${id}`, (element) => {
+    element.onmouseover = () => {
+      const arrow = document.querySelector(`.mobileOff.${id} .arrow`);
+
+      if (arrow.classList.contains("active")) return;
+
+      arrow.classList.add("active");
+    };
+
+    element.onmouseout = () => {
+      const arrow = document.querySelector(`.mobileOff.${id} .arrow`);
+
+      if (!arrow.classList.contains("active")) return;
+
+      arrow.classList.remove("active");
+    };
+  });
+};
+
+handleArrowOnHover("products");
+handleArrowOnHover("learning");
 
 waitForElement(".dropdown-btn", function () {
   document.querySelectorAll(".dropdown-btn").forEach((button) => {

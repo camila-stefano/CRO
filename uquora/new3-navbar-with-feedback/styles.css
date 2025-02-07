@@ -39,9 +39,6 @@ p.weight-500.product-subtitle.font-color-orange {
   .dropdown-text:hover .nav-link {
     border-bottom: none !important;
   }
-  .dropdown:hover .arrow i {
-    transform: rotate(180deg);
-  }
 }
 .nav-link {
   text-transform: capitalize !important;
@@ -61,10 +58,10 @@ p.weight-500.product-subtitle.font-color-orange {
 .arrow i {
   padding-left: 0.5rem;
   transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
 }
 .rotated {
   transform: rotate(180deg) !important;
+  color: #fe633c;
 }
 .big-arrow i {
   width: 13px;
@@ -96,7 +93,7 @@ p.weight-500.product-subtitle.font-color-orange {
   min-width: 360px;
   height: 100%;
   background-color: #ffffff;
-  padding: 1rem;
+  padding: 1.5rem 2rem;
 }
 .floating-menu .list a {
   font-family: inherit;
@@ -163,27 +160,27 @@ p.weight-500.product-subtitle.font-color-orange {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.4rem;
 }
 .learning-center-box-content {
-  color: #4c4d4f;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 22px;
+  color: #003866;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
   text-align: center;
   margin: 0;
 }
-.bg-light-orange {
-  background-color: #fdab7a;
-}
 .bg-light-blue {
-  background-color: #cee9f7;
-}
-.bg-light-green {
-  background-color: #b7e1d9;
+  background-color: #cae9fc;
 }
 .bg-light-pink {
   background-color: #e1bfdc;
+}
+.bg-light-green {
+  background-color: #d4eee9;
+}
+.bg-light-orange {
+  background-color: #fce2cd;
 }
 .font-color-orange {
   color: #fe633c !important;
@@ -378,4 +375,13 @@ p.weight-500.product-subtitle.font-color-orange {
   .d-flex.justify-content-between.justify-content-lg-start.align-items-center.w-100 {
     gap: 0.5rem;
   }
+  .floating-menu .list {
+    min-width: 300px;
+    padding: 1.5rem 2rem;
+  }
+}
+
+.active {
+  color: #fe633c !important;
+  transition: 0.3s;
 }
