@@ -1,0 +1,132 @@
+#test-xx .progressBar {
+  display: block;
+  width: 90%;
+  height: 3px;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #dfdfdf;
+  background-image: linear-gradient(to right, #000000, #000000);
+  background-repeat: no-repeat;
+  background-size: 90% 100%;
+  margin-bottom: 20px;
+  transition: background-size 0.4s ease-in-out;
+}
+
+#test-xx .progressBar .progressBarLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+#test-xx {
+  margin-top: 72px;
+}
+#test-xx p {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+}
+#test-xx .slick-prev {
+  bottom: -20px;
+  right: 28px;
+  top: unset;
+  left: unset;
+  margin-right: 30px;
+}
+#test-xx .slick-next {
+  bottom: -20px;
+  top: unset;
+  transform: rotate(180deg);
+}
+
+#test-xx .slick-slide p {
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+#test-xx .slick-slide:hover > p {
+  color: #e31837 !important;
+}
+#test-xx .slick-arrow {
+  width: 42px;
+  height: 42px;
+  background: url(https://development-na.titleist.com/on/demandware.static/Sites-titleist-Site/-/en_US/v1710171157537/images/icons/arrow-left-black.svg)
+    no-repeat center center;
+  background-size: 8px;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+#test-xx .slick-slider {
+  margin-bottom: 0px;
+}
+
+#test-xx .slick-disabled {
+  opacity: 0.3;
+}
+
+#test-xx .testSlider img {
+  width: 270px;
+}
+
+#test-xx .principal-image,
+#test-xx .secondary-image {
+  display: none;
+  margin-right: 12px;
+}
+
+#test-xx .active {
+  display: block;
+}
+
+.pt_clubs-search-result .plp-actions .plp-actions-container {
+  border-top: none;
+}
+
+@media only screen and (max-width: 767px) {
+  #test-xx {
+    margin-top: 0;
+  }
+  #test-xx .progressBar {
+    width: 60%;
+    background-size: 23% 100%;
+  }
+
+  .slick-list {
+    margin-right: -24px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #test-xx {
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1198px) {
+  #test-xx .progressBar {
+    width: 80%;
+    background-size: 50% 100%;
+  }
+
+  .slick-list {
+    margin-right: -100px;
+  }
+}
+
+@media (min-width: 1198px) and (max-width: 1550px) {
+  #test-xx .progressBar {
+    background-size: 70% 100%;
+  }
+
+  .slick-list {
+    margin-right: -150px;
+  }
+}
