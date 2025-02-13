@@ -1,6 +1,39 @@
+#wrapper.pt_cart
+  #main
+  #primary
+  .cart-actions.cart-actions-top
+  .cart-action-paypal {
+  margin: 0;
+}
+fieldset a.cart-action-paypal.button {
+  display: none;
+}
+fieldset a.test-41-child.cart-action-paypal.button {
+  display: inline-block;
+}
+form#checkout-form fieldset {
+  display: flex;
+  align-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.cart-action-paypal .button {
+  display: none !important;
+}
+button.dw-apple-pay-button {
+  order: 1;
+}
+.test-41 {
+  order: 2;
+  margin-right: 15px;
+}
+button.go-checkout.button {
+  order: 3;
+}
 .container-top-pay-in-4 {
   width: 100%;
   max-width: 220px;
+  margin: 0 auto;
 }
 .container-pay-in-4 {
   width: 100%;
@@ -26,11 +59,13 @@
 }
 .span-top-pay-in-4 span {
   vertical-align: middle;
-  line-height: 0px;
+  display: inline-flex;
+  align-items: center;
 }
 .span-pay-in-4 span {
   vertical-align: middle;
-  line-height: 0px;
+  display: inline-flex;
+  align-items: center;
 }
 .img-top-paypal {
   width: 49px;
@@ -43,13 +78,13 @@
 .img-top-exclamation {
   width: 11px;
   height: 11px;
-  margin-bottom: 4px;
+  margin-bottom: 1px;
   margin-left: 4px;
 }
 .img-exclamation {
   width: 14px;
   height: 14px;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   margin-left: 4px;
 }
 #wrapper.pt_cart
@@ -87,6 +122,55 @@
 }
 @media screen and (max-width: 394px) {
   a.cart-action-paypal.button {
-    margin-bottom: 10px;
+    order: 3;
+  }
+}
+@media only screen and (max-width: 767px) {
+  a.cart-action-paypal.button {
+    margin-bottom: 7px;
+  }
+  .test-41 {
+    width: 100%;
+  }
+  .container-top-pay-in-4 {
+    max-width: none;
+    padding: 6px 34px 0px 34px;
+  }
+  button.go-checkout.button {
+    order: 1;
+  }
+  #wrapper.pt_cart
+    #main
+    #primary
+    .cart-actions.cart-actions-top
+    .dw-apple-pay-button,
+  #wrapper.pt_cart
+    #main
+    #primary
+    .cart-actions.cart-actions-top
+    .cart-action-paypal {
+    margin: 10px 0 0;
+    order: 3;
+  }
+  .span-top-pay-in-4 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .img-top-paypal {
+    width: 65px;
+    height: auto;
+  }
+  .img-top-exclamation {
+    width: 14px;
+    height: 14px;
+    margin-bottom: 2px;
+    margin-left: 4px;
+  }
+  #wrapper.pt_cart
+    #main
+    #primary
+    .cart-actions.cart-actions-top
+    .cart-action-paypal {
+    margin-bottom: 7px;
   }
 }
