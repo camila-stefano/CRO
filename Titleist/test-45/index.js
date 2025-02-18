@@ -1,3 +1,13 @@
+const orderValueElement = document.querySelectorAll(".order-value")[0];
+const orderValue = parseFloat(orderValueElement.textContent.trim());
+const paymentsValue = (orderValue / 4).toFixed(2);
+
+const spanElement = document.querySelector(".payments-value");
+
+if (spanElement) {
+  spanElement.textContent = `$${paymentsValue}`;
+}
+
 const fieldset = document.querySelector("#checkout-form fieldset");
 
 const newElement = document.createElement("div");
@@ -8,7 +18,7 @@ newElement.innerHTML = `<a class="test-41-child cart-action-paypal button" href=
 			</a>
             <div class="container-top-pay-in-4">
       <p class="span-top-pay-in-4">
-        Pay in 4 interest-free payments of $15.00 with
+        Pay in 4 interest-free payments of <span>$${paymentsValue}</span> with
         <span>
           <img
             class="img-top-paypal"
