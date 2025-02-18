@@ -1,0 +1,5 @@
+<li>
+                <a href="/golf-balls/pro-v1-pro-v1x/"><img class="box lazyloaded" data-src="//acushnet.scene7.com/is/image/titleist/2023+Pro+V1+SubNav+Thumb+112922?wid=100&amp;qlt=75&amp;resMode=sharp2" src="//acushnet.scene7.com/is/image/titleist/2023+Pro+V1+SubNav+Thumb+112922?wid=100&amp;qlt=75&amp;resMode=sharp2" alt="Pro V1" width="100" height="70" data-srcset="//acushnet.scene7.com/is/image/titleist/2023+Pro+V1+SubNav+Thumb+112922?wid=100&amp;qlt=75&amp;resMode=sharp2, //acushnet.scene7.com/is/image/titleist/2023+Pro+V1+SubNav+Thumb+112922?wid=200&amp;qlt=75&amp;resMode=sharp2 2x" srcset="//acushnet.scene7.com/is/image/titleist/2023+Pro+V1+SubNav+Thumb+112922?wid=100&amp;qlt=75&amp;resMode=sharp2, //acushnet.scene7.com/is/image/titleist/2023+Pro+V1+SubNav+Thumb+112922?wid=200&amp;qlt=75&amp;resMode=sharp2 2x">
+                    <div class="label">Pro V1</div>
+                </a>
+            </li>
