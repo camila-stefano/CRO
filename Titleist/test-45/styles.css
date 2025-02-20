@@ -26,14 +26,16 @@ button.dw-apple-pay-button {
 .test-41 {
   order: 2;
   margin-right: 15px;
+  float: right;
+  max-width: 311px;
 }
 button.go-checkout.button {
   order: 3;
 }
 .container-top-pay-in-4 {
   width: 100%;
-  max-width: 220px;
   margin: 0 auto;
+  max-width: 200px;
 }
 .container-pay-in-4 {
   width: 100%;
@@ -74,18 +76,6 @@ button.go-checkout.button {
 .img-paypal {
   width: 65px;
   height: auto;
-}
-.img-top-exclamation {
-  width: 11px;
-  height: 11px;
-  margin-bottom: 1px;
-  margin-left: 4px;
-}
-.img-exclamation {
-  width: 14px;
-  height: 14px;
-  margin-bottom: 2px;
-  margin-left: 4px;
 }
 #wrapper.pt_cart
   #main
@@ -131,6 +121,8 @@ button.go-checkout.button {
   }
   .test-41 {
     width: 100%;
+    margin-right: 0px;
+    max-width: none;
   }
   .container-top-pay-in-4 {
     max-width: none;
@@ -160,17 +152,28 @@ button.go-checkout.button {
     width: 65px;
     height: auto;
   }
-  .img-top-exclamation {
-    width: 14px;
-    height: 14px;
-    margin-bottom: 2px;
-    margin-left: 4px;
-  }
   #wrapper.pt_cart
     #main
     #primary
     .cart-actions.cart-actions-top
     .cart-action-paypal {
     margin-bottom: 7px;
+  }
+}
+@media (min-width: 768px) and (max-width: 782px) {
+  .test-41 {
+    margin-right: 10px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  @supports (-webkit-hyphens: none) and (not (-ms-ime-align: auto)) {
+    .test-41 {
+      margin-right: 0px;
+      width: 32%;
+    }
+    a.test-41-child.cart-action-paypal.button {
+      width: 100% !important;
+    }
   }
 }

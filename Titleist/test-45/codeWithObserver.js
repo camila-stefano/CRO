@@ -47,7 +47,6 @@ function updatePaymentsInfo(orderValueElement) {
           Pay in 4 interest-free payments of <span>$${paymentsValue}</span> with
           <span>
             <img class="img-top-paypal" src="/on/demandware.static/Sites-titleist-Site/-/default/dwbcf95756/images/mobile-cart-checkout-buttons.jpg">
-            <img class="img-top-exclamation" src="https://i.imgur.com/o0fLz2U.png">
           </span>
         </p>
       </div>
