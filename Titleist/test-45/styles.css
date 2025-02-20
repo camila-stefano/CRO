@@ -27,7 +27,6 @@ button.dw-apple-pay-button {
   order: 2;
   margin-right: 15px;
   float: right;
-  max-width: 311px;
 }
 button.go-checkout.button {
   order: 3;
@@ -163,7 +162,6 @@ button.go-checkout.button {
 @media (min-width: 768px) and (max-width: 782px) {
   .test-41 {
     margin-right: 10px;
-    width: 100%;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
