@@ -19,17 +19,17 @@ waitForElement(".thumbnails-container", function () {
     const currentPath = document.location.pathname.replace(/\/$/, "");
     console.log("Current Path:", currentPath);
 
-    if (!currentPath.includes("/product/players-4-carbon/25TBSX5")) {
-      return;
-    } else if (currentPath.includes("/product/tour-performance/25THATP")) {
-      return;
-    } else if (currentPath.includes("product/tour-performance-mesh/25THATPM")) {
-      return;
-    } else if (currentPath.includes("/product/laguna/25THALG")) {
-      return;
-    } else if (currentPath.includes("/product/players-5/23TGB06")) {
-      return;
-    } else if (currentPath.includes("/product/santa-cruz/24THSC")) {
+    const validPaths = [
+      "/product/players-4-carbon/25TBSX5",
+      "/product/tour-performance/25THATP",
+      "/product/tour-performance-mesh/25THATPM",
+      "/product/laguna/25THALG",
+      "/product/players-5/23TGB06",
+      "/product/santa-cruz/24THSC",
+    ];
+
+    if (!validPaths.some((path) => currentPath.includes(path))) {
+      console.log("No matching path found $$$");
       return;
     }
 
