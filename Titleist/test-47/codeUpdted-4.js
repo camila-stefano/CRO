@@ -67,11 +67,10 @@ function observeProductImageContainer() {
   });
 
   observer.observe(targetNode, {
-    childList: true, // Detecta cambios en hijos (nuevos elementos, eliminaciones)
-    attributes: true, // Detecta cambios en atributos (clases, estilos, etc.)
-    subtree: true, // Detecta cambios en todos los elementos dentro del contenedor
+    childList: true,
+    attributes: true,
+    subtree: true,
   });
 }
 
-// Iniciar la observación
 observeProductImageContainer();
