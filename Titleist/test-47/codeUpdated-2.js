@@ -19,26 +19,20 @@ waitForElement(".thumbnails-container", function () {
     const currentPath = document.location.pathname.replace(/\/$/, "");
     console.log("Current Path:", currentPath);
 
-    const validPaths = [
-      "/product/players-4-carbon/25TBSX5",
-      "/product/tour-performance/25THATP",
-      "/product/tour-performance-mesh/25THATPM",
-      "/product/laguna/25THALG",
-      "/product/players-5/23TGB06",
-      "/product/santa-cruz/24THSC",
-    ];
-    if (!validPaths.some((path) => currentPath.includes(path))) {
-      console.log("No matching path found $$$");
+    if (!currentPath.includes("/product/players-4-carbon/25TBSX5")) {
+      console.log("Path does not match $$$");
       return;
     }
 
+    console.log("URL matches $$$");
+
     function removeSlideWhenReady() {
-      const track = document.querySelector(".slick-track");
+      const container = document.querySelector(".slick-track");
       const slider = document.querySelector(
         ".thumbnails-container .slick-slider"
       );
 
-      if (!track || !slider || typeof $(slider).slick !== "function") {
+      if (!container || !slider || typeof $(slider).slick !== "function") {
         console.log("Slick not initialized yet, retrying... $$$");
         setTimeout(removeSlideWhenReady, 500);
         return;
@@ -46,7 +40,9 @@ waitForElement(".thumbnails-container", function () {
 
       console.log("Slick initialized $$$");
 
-      const elementToRemove = track.querySelector("div[data-slick-index='1']");
+      const elementToRemove = container.querySelector(
+        "div[data-slick-index='1']"
+      );
       if (!elementToRemove) {
         console.log("Element not found, retrying... $$$");
         setTimeout(removeSlideWhenReady, 500);
