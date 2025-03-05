@@ -20,6 +20,7 @@ waitForElement(".thumbnails-container", function () {
     const slider = document.querySelector(
       ".thumbnails-container .slick-slider"
     );
+    const modelPic = document.querySelector(".product-primary-image img");
 
     if (!track || !slider || typeof $(slider).slick !== "function") {
       setTimeout(() => hideSlidesWhenReady(slides), 100);
@@ -44,6 +45,26 @@ waitForElement(".thumbnails-container", function () {
         .forEach((element) => {
           element.style.display = "none";
         });
+
+      // Eliminar slides con imágenes que coincidan con el patrón '_10.png'
+      document
+        .querySelectorAll(".product-thumbnails [data-slick-index]")
+        .forEach((thumbnail) => {
+          const img = thumbnail.querySelector("img");
+          if (img && img.src.split("?")[0].match(/_10\.png$/)) {
+            thumbnail.style.display = "none";
+          }
+        });
+
+      // Eliminar slides con imágenes que coincidan con el patrón '_11.png'
+      document
+        .querySelectorAll(".product-thumbnails [data-slick-index]")
+        .forEach((thumbnail) => {
+          const img = thumbnail.querySelector("img");
+          if (img && img.src.split("?")[0].match(/_11\.png$/)) {
+            thumbnail.style.display = "none";
+          }
+        });
     });
   }
 
@@ -57,15 +78,11 @@ waitForElement(".thumbnails-container", function () {
       "/tour-performance-mesh/25THATPM",
       "/players-5/23TGB06",
       "/santa-cruz/24THSC",
+      "/players-4-stadry/23TGB05",
+      "/players-4/23TGB04",
     ];
 
-    const validPaths2 = ["/players-4-stadry/23TGB05", "/players-4/23TGB04"];
-
     if (validPaths.some((path) => currentPath.includes(path))) {
-      hideSlidesWhenReady([1]);
-      return;
-    }
-    if (validPaths2.some((path) => currentPath.includes(path))) {
       hideSlidesWhenReady([1]);
       return;
     }
