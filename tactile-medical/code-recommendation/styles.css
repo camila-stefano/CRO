@@ -1,0 +1,29 @@
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  /* Fixed styles */
+  .kylee--btns {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    justify-self: anchor-center;
+  }
+
+  .android-only,
+  .ios-only {
+    display: none; /* Hide by default */
+  }
+
+  /* Show Only for iOS */
+  @supports (-webkit-touch-callout: none) and (-webkit-text-size-adjust: none) {
+    .ios-only {
+      display: block !important;
+    }
+  }
+
+  /* Show Only for Android */
+  @supports (-webkit-touch-callout: none) and (-moz-user-select: none) {
+    .android-only {
+      display: block !important;
+    }
+  }
+}
