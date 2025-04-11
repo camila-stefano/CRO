@@ -1,0 +1,60 @@
+.test-1-container {
+  max-width: 358px;
+  width: 100%;
+}
+.test-1-container-card {
+  border: 1px solid #babec5;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.test-1-container-card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.test-1-container-card-text .title {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.test-1-container-card-text .subtitle {
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+  text-align: center;
+}
+.test-1-container-card-button a:hover {
+  background-color: #17497f;
+}
+.test-1-container-card-button a {
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: #205ea3;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px;
+}
+.test-1-container-card-button a span {
+  padding: 10px;
+}
+.test-1-container-card-link {
+  margin-top: 12px;
+}
+.test-1-container-card-link a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #205ea3;
+}
+.test-1-container-card-link a:hover {
+  color: #205ea3;
+  text-decoration: underline;
+}
