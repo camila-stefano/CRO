@@ -16,7 +16,7 @@ newVariantElement.innerHTML = `
           type="button"
           href="https://myturbotax.intuit.com/sign-up?cid=soc_blog_button_file"
           target="_self"
-          class=""
+          class="wp-block-button__link wp-element-button"
           ><span>Get started</span></a
         >
       </div>

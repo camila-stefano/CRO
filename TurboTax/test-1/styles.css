@@ -29,23 +29,33 @@
   font-weight: 400;
   text-align: center;
 }
-.test-1-container-card-button a:hover {
-  background-color: #17497f;
+
+a.wp-block-button__link.wp-element-button {
+  line-height: 1.4 !important;
+}
+.wp-block-button__link.wp-element-button:active {
+  transform: translateY(0px) !important;
+}
+
+.test-1-container-card-button:hover {
+  background-color: #103661;
+  border-radius: 4px !important;
 }
 .test-1-container-card-button a {
-  font-size: 20px;
-  font-weight: 600;
-  text-decoration: none;
-  background-color: #205ea3;
-  color: #fff;
-  border-radius: 4px;
-  padding: 8px;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  background-color: #205ea3 !important;
+  color: #fff !important;
+  border-radius: 4px !important;
+  padding: 8px !important;
 }
 .test-1-container-card-button a span {
   padding: 10px;
 }
 .test-1-container-card-link {
   margin-top: 12px;
+  text-align: center;
 }
 .test-1-container-card-link a {
   text-decoration: none;
