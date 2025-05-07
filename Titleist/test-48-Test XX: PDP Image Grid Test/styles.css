@@ -1,0 +1,37 @@
+.regular.slider {
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .thumbnails-container {
+    display: none !important;
+  }
+  #pdpMain .product-core-info .breadcrumb {
+    position: relative !important;
+    margin: 16px 0 16px 20px;
+  }
+  .regular.slider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  #pdpMain .product-core-info {
+    padding: 0px 48px;
+  }
+  #pdpMain
+    .product-core-info
+    .product-image-container
+    .product-primary-image
+    .regular.slider {
+    background-color: transparent;
+  }
+  .thumb {
+    background-color: #f0f0f0;
+  }
+}
+
+@media (min-width: 1350px) {
+  #pdpMain .product-core-info {
+    padding: 0px 160px;
+  }
+}
