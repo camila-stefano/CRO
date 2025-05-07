@@ -28,6 +28,20 @@
   .thumb {
     background-color: #f0f0f0;
   }
+  #pdpMain .product-core-info .product-col-2 {
+    padding-top: 47px;
+  }
+  #pdpMain .product-core-info + .product-info {
+    margin-top: 0;
+  }
+  #pdpMain .product-content .product-content-item,
+  #pdpMain .product-content .club-pdp-compare {
+    position: static;
+  }
+  #pdpMain .product-core-info .product-image-container.sticky {
+    position: static;
+    width: 100%;
+  }
 }
 
 @media (min-width: 1350px) {
