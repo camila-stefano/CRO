@@ -59,6 +59,12 @@ function runTest() {
             padding: 0px 160px;
           }
         }
+
+        @media only screen and (min-width: 1441px) {
+          #pdpMain .product-core-info .product-col-2 {
+            max-width: 475px !important;
+          }
+        }
       `;
     document.head.appendChild(style);
   }
