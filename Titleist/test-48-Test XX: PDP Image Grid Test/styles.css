@@ -8,12 +8,13 @@
   }
   #pdpMain .product-core-info .breadcrumb {
     position: relative !important;
-    margin: 16px 0 16px 20px;
+    margin: 16px 0 8px 20px !important;
   }
   .regular.slider {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     gap: 8px;
+    max-height: 100% !important;
   }
   #pdpMain .product-core-info {
     padding: 0px 48px;
@@ -23,13 +24,13 @@
     .product-image-container
     .product-primary-image
     .regular.slider {
-    background-color: transparent;
+    background-color: transparent !important;
   }
   .thumb {
     background-color: #f0f0f0;
   }
   #pdpMain .product-core-info .product-col-2 {
-    padding-top: 47px;
+    padding-top: 39px !important;
   }
   #pdpMain .product-core-info + .product-info {
     margin-top: 0;
@@ -41,6 +42,9 @@
   #pdpMain .product-core-info .product-image-container.sticky {
     position: static;
     width: 100%;
+  }
+  .product-primary-image .glass-icon {
+    display: none;
   }
 }
 
