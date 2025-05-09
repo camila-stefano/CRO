@@ -7,6 +7,16 @@ function runTest() {
         .regular.slider {
           display: block;
         }
+        div#wrapper {
+          overflow-x: visible;
+        }
+        div#pdpMain {
+          overflow: visible;
+        }
+        .product-col-2.product-detail {
+          position: sticky;
+          top: 0px;
+        }
   
         @media (min-width: 992px) {
           .thumbnails-container {
