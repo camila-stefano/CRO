@@ -1,0 +1,10 @@
+.product-variations {
+  display: flex;
+  flex-direction: column;
+}
+.product-variations .test-49 {
+  order: 1;
+}
+.product-variations ul {
+  order: 2;
+}
