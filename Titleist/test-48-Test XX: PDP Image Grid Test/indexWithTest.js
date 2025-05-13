@@ -5,7 +5,7 @@ function runTest() {
     style.id = "test-101-css";
     style.textContent = `
         .regular.slider {
-          display: block;
+        display: block;
         }
         div#wrapper {
           overflow-x: visible;
@@ -17,7 +17,10 @@ function runTest() {
           position: sticky;
           top: 0px;
         }
-  
+        body {
+        overflow-x: hidden;
+        }
+
         @media (min-width: 992px) {
           .thumbnails-container {
             display: none !important;
@@ -61,12 +64,6 @@ function runTest() {
           }
           .product-primary-image .glass-icon {
             display: none;
-          }
-        }
-  
-        @media (min-width: 1350px) {
-          #pdpMain .product-core-info {
-            padding: 0px 160px;
           }
         }
 
