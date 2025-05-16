@@ -74,62 +74,8 @@ const getTrendingsElements = () => {
   const matchingAnchors = Array.from(swatches).filter((anchor) => {
     const title = anchor.getAttribute("title");
     const color = title.replace("Select Color: ", "").trim();
-    return trending.includes(color);
+    return allowedColors.includes(color);
   });
 
   return matchingAnchors;
 };
-
-function waitForElement(selector, callback) {
-  const observer = new MutationObserver((mutations) => {
-    if (document.querySelector(selector)) {
-      observer.disconnect();
-      callback();
-    }
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
-}
-
-waitForElement(".product-variations", function () {
-  const divOriginal = document.querySelector(".product-constiations");
-
-  console.log("🚀 ~ divOriginal:", divOriginal);
-
-  if (!divOriginal) return;
-
-  const newElement = document.querySelector(".test-49");
-
-  if (!newElement) {
-    console.log("🚀 ~ Creating new element");
-    newElement = document.createElement("div");
-    newElement.classList.add("test-49");
-    divOriginal.appendChild(newElement);
-  }
-
-  const elements = getTrendingsElements();
-  console.log("🚀 ~ elements:", elements);
-
-  newElement.innerHTML = `
-       <div class="product-trendings" data-attributes="{}">
-      <ul>
-        <li class="attribute">
-          <div class="label">Trending Colors</div>
-          <div class="value">
-            <ul class="swatches color">
-              ${elements
-                .map(
-                  (element) => `
-                <li class="selectable">
-                  ${element.outerHTML}
-                </li>
-              `
-                )
-                .join("")}
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
-    `;
-});
