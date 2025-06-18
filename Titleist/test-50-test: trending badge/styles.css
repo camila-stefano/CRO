@@ -1,0 +1,103 @@
+.test-49 .product-trendings .label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.07px;
+  text-transform: capitalize;
+  padding: 12px 0;
+  color: #000000;
+  line-height: normal;
+}
+
+.test-49 .product-trendings .value .swatches.color {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.test-49 .product-trendings .value .swatches.color .selectable {
+  margin: 0 5px 5px 0;
+  width: auto;
+  height: auto;
+}
+
+.test-49 .product-trendings .value .swatches.color .selectable a {
+  width: 67px;
+  min-height: auto;
+  height: auto;
+  padding: 2px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  background: #ececec;
+  box-shadow: none;
+  display: block;
+}
+
+.test-49 .product-trendings .value .swatches.color .selectable a img {
+  width: 61px;
+  border-radius: 0;
+  height: auto;
+  vertical-align: middle;
+  margin: 0px;
+}
+
+.test-49 .product-trendings .value .swatches.color .selectable.selected a {
+  border-color: #000000;
+  background: #ececec;
+}
+
+.test-49
+  .product-trendings
+  .value
+  .swatches.color
+  .selectable
+  .configurator-option {
+  border: none;
+  padding: 0;
+}
+
+.test-49
+  .product-trendings
+  .value
+  .swatches.color
+  .selectable
+  .configurator-option
+  input {
+  margin: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  visibility: hidden;
+  position: absolute;
+}
+
+.test-49
+  .product-trendings
+  .value
+  .swatches.color
+  .selectable
+  .configurator-option
+  img {
+  background-color: #ececec;
+  width: 69px;
+}
+
+.test-49
+  .product-trendings
+  .value
+  .swatches.color
+  .selectable.selected
+  .configurator-option
+  img {
+  border: 1px solid #000000;
+}
+
+@media screen and (max-width: 992px) {
+  .product-col-2.product-detail {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .product-col-2.product-detail .test-49 {
+    order: -1;
+    padding: 0 20px;
+  }
+}
