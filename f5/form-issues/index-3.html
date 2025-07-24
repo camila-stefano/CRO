@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      (() => {
+        console.log("ID: F5046, VARIATION: m, VERSION: 0.0.1 is running.....!");
+        let lastScrollTop = 0;
+        let is50PercentScrolled = false;
+        let is75PercentScrolled = false;
+        let scrollDirection = "down";
+        function triggerMetrics(mboxName) {
+          adobe && adobe.target && adobe.target.trackEvent({ mbox: mboxName });
+          console.log("mbox=", mboxName);
+        }
+        window.addEventListener("scroll", (e) => {
+          let scrollPercent =
+            window.scrollY / (document.body.offsetHeight - window.innerHeight);
+          let scrollPercentRounded = Math.round(scrollPercent * 100);
+          var st = document.documentElement.scrollTop;
+          if (st > lastScrollTop) {
+            scrollDirection = "down";
+          } else if (st < lastScrollTop) {
+            is75PercentScrolled = false;
+            is50PercentScrolled = false;
+            scrollDirection = "up";
+          }
+          lastScrollTop = st <= 0 ? 0 : st;
+          if (
+            scrollPercentRounded > 75 &&
+            scrollPercentRounded < 80 &&
+            !is75PercentScrolled &&
+            scrollDirection === "down"
+          ) {
+            triggerMetrics("scrolled-75-percent");
+            is75PercentScrolled = true;
+          }
+          if (
+            scrollPercentRounded > 50 &&
+            scrollPercentRounded < 55 &&
+            !is50PercentScrolled &&
+            scrollDirection === "down"
+          ) {
+            triggerMetrics("scrolled-50-percent");
+            is50PercentScrolled = true;
+          }
+        });
+      })();
+    </script>
+    <script>
+      function triggerMetrics(mboxName) {
+        console.log("mbox=", mboxName);
+        adobe && adobe.target && adobe.target.trackEvent({ mbox: mboxName });
+      }
+      function runTest() {
+        const targetNode = document.querySelector("div.success-message");
+        const config = { attributes: true };
+        let isFormSubmitted = false;
+        const callback = (mutationList, observer) => {
+          for (let index = 0; index < mutationList.length; index++) {
+            const target = mutationList[index].target;
+            if (target.classList.contains("show") && !isFormSubmitted) {
+              triggerMetrics("form-submitted-successfully");
+              isFormSubmitted = true;
+            }
+          }
+        };
+        const observer = new MutationObserver(callback);
+        observer.observe(targetNode, config);
+        console.log("Form successful submission event added...!");
+      }
+      (function pollOnload() {
+        if (
+          document.querySelector("body") &&
+          document.querySelector("div.success-message")
+        ) {
+          try {
+            runTest();
+          } catch (error) {
+            console.log("Initialization error:", error);
+          }
+        } else {
+          setTimeout(pollOnload, 250);
+        }
+      })();
+    </script>
+  </body>
+</html>
+l
