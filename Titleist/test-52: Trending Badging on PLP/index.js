@@ -64,15 +64,31 @@ convert.$(document).ready(function () {
         const productTile = link.closest(".product-tile");
         const imageContainer = productTile?.querySelector(".product-image");
 
-        if (imageContainer) {
-          if (!imageContainer.querySelector(".trending-badge")) {
-            const badge = document.createElement("div");
-            badge.innerHTML = `<p class="trending-badge-test-52" style="color: #b51029; font-size: 12px; line-height: 15px; font-weight: bold;font-family: inherit; margin-bottom: 4px; margin: 0;padding-bottom: 4px">TRENDING</p>`;
-            imageContainer.insertAdjacentElement("afterend", badge);
-          }
+        if (
+          imageContainer &&
+          !imageContainer.nextElementSibling?.classList.contains(
+            "trending-badge-test-52"
+          )
+        ) {
+          const badge = document.createElement("div");
+          badge.innerHTML = `<p class="trending-badge-test-52" style="color: #b51029; font-size: 12px; line-height: 15px; font-weight: bold;font-family: inherit; margin-bottom: 4px; margin: 0;padding-bottom: 4px">TRENDING</p>`;
+          imageContainer.insertAdjacentElement("afterend", badge);
         }
       }
     });
   }
+
   addTrendingBadge(trendingProducts);
+
+  const productGrid = document.querySelector("#search-result-items");
+  if (productGrid) {
+    const observer = new MutationObserver(() => {
+      addTrendingBadge(trendingProducts);
+    });
+
+    observer.observe(productGrid, {
+      childList: true,
+      subtree: true,
+    });
+  }
 });
