@@ -50,6 +50,8 @@ convert.$(document).ready(function () {
     "Phantom Black 11": "Putters",
     Velocity: "Balls",
     "AVX AIM 360": "Balls",
+    "TruFeel Double Dozen Box": "Balls",
+    "Pro V1x AIM Enhanced": "Balls",
   };
 
   function addTrendingBadge(trendingProducts) {
